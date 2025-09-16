@@ -1,16 +1,15 @@
 # ETL Project: Sales & Customer Analytics
 
 ## Repository Outline
-1. zoomcamp_dag.py                 - Script utama ETL (extract, transform, load)  
+1. zoomcamp_dag.py                - Script utama ETL (extract, transform, load)  
 2. query_sales.sql                - Query SQL untuk data penjualan  
 3. query_customer.sql             - Query SQL untuk data pelanggan  
 4. query_customer_report.sql      - Query SQL untuk laporan gabungan  
 5. airflow_lite.yaml              - File konfigurasi Docker Compose untuk Airflow  
 6. images/                        - Dokumentasi hasil analisis visualisasi di Kibana  
-   - segmentation.png  
-   - age_group.png  
-   - sales_age.png  
-   - sales_segmentation.png  
+   - business recommendation.png  
+   - distribusi segmen dan usia pelanggan.png  
+   - total sales berdasarkan segmen dan usia pelanggan.png 
 
 ## Problem Background
 Perusahaan ritel perlu memahami pola perilaku pelanggan dan performa penjualan untuk tetap kompetitif.  
@@ -25,12 +24,12 @@ Tantangan utama ada pada volume data yang besar dan tersebar, sehingga dibutuhka
 ## Data
 - Sumber: PostgreSQL (hasil ekstraksi penjualan & pelanggan).  
 - Query utama:  
-  - `sales.sql` → data transaksi penjualan  
-  - `customer.sql` → data pelanggan  
-  - `report.sql` → laporan agregasi penjualan & pelanggan  
+  - `query_sales.sql` → data transaksi penjualan  
+  - `query_customer.sql` → data pelanggan  
+  - `query_customer_report.sql` → laporan agregasi penjualan & pelanggan  
 
 ## Method
-- **Extract** data dari PostgreSQL menggunakan SQLAlchemy & Pandas  
+- **Extract** data dari PostgreSQL menggunakan Pandas  
 - **Transform** data sesuai kebutuhan analisis (segmentasi & agregasi penjualan)  
 - **Load** data ke Elasticsearch  
 - **Visualisasi** menggunakan Kibana  
